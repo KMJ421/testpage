@@ -52,7 +52,7 @@ const sSeries = [
     },
     { 
         name: "Galaxy S10 5G", 
-        image: "phone/s10_5g.jpg", 
+        image: "phone/s10_5G.jpg", 
         details: `
             <ul>
                 <li><strong>프로세서:</strong> 삼성 엑시노스 9 Series (9820) SoC.</li>
@@ -67,7 +67,7 @@ const sSeries = [
     },
     { 
         name: "Galaxy S20 5G", 
-        image: "phone/s20_5g.jpg", 
+        image: "phone/s20_5G.jpg", 
         details: `
             <ul>
                 <li><strong>프로세서:</strong> 퀄컴 스냅드래곤 865 SM8250</li>
@@ -83,7 +83,7 @@ const sSeries = [
     },
     { 
         name: "Galaxy S20+ 5G", 
-        image: "phone/s20+_5g.jpg", 
+        image: "phone/s20+_5G.jpg", 
         details: `
             <ul>
                 <li><strong>프로세서:</strong> 퀄컴 스냅드래곤 865 SM8250</li>
@@ -99,7 +99,7 @@ const sSeries = [
     },
     { 
         name: "Galaxy S20 Ultra 5G", 
-        image: "phone/s20ultra_5g.jpg", 
+        image: "phone/s20ultra_5G.jpg", 
         details: `
             <ul>
                 <li><strong>프로세서:</strong> 퀄컴 스냅드래곤 865 SM8250</li>
