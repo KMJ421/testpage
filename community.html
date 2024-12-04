@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티</title>
+    <link rel="stylesheet" href="community.css">
+</head>
+<body>
+    <header>
+        <a href="start.html" class="logo">스마트폰 커뮤니티</a>
+        <div id="userStatus" class="user-status"></div>
+    </header>
+    <main>
+        <section id="postSection" class="post-section">
+            <h1>커뮤니티</h1>
+            <select id="phoneModel">
+                <option value="">스마트폰 기종 선택</option>
+                <option value="Galaxy S22">Galaxy S22</option>
+                <option value="Galaxy Z Fold4">Galaxy Z Fold4</option>
+                <option value="iPhone 14">iPhone 14</option>
+                <option value="iPhone 13">iPhone 13</option>
+            </select>
+            <textarea id="postInput" placeholder="게시글을 작성하세요..." rows="2" disabled></textarea>
+            <button id="postButton" disabled>글 작성</button>
+        </section>
+        <section id="filterSection" class="filter-section">
+            <h2>글 필터링</h2>
+            <select id="filterModel">
+                <option value="all">전체 보기</option>
+                <option value="Galaxy S22">Galaxy S22</option>
+                <option value="Galaxy Z Fold4">Galaxy Z Fold4</option>
+                <option value="iPhone 14">iPhone 14</option>
+                <option value="iPhone 13">iPhone 13</option>
+            </select>
+        </section>
+        <section id="postsContainer" class="posts-container">
+            <!-- 게시글이 여기에 추가됩니다 -->
+        </section>
+        <section id="pagination" class="pagination">
+            <button id="prevPage" disabled>이전</button>
+            <span id="currentPage">1</span>
+            <button id="nextPage" disabled>다음</button>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 스마트폰 커뮤니티 | All Rights Reserved</p>
+    </footer>
+    <script src="community.js"></script>
+</body>
+</html>
