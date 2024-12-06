@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const userStatusDiv = document.getElementById("userStatus");
     const phoneModelSelect = document.getElementById("phoneModel");
-    const filterModelSelect = document.getElementById("filterModel");
     const postInput = document.getElementById("postInput");
     const postButton = document.getElementById("postButton");
     const postsContainer = document.getElementById("postsContainer");
@@ -12,11 +11,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const postsPerPage = 5; // 페이지당 표시할 게시글 수
     let currentPage = 1; // 현재 페이지
 
-    // 로그인된 사용자 정보 가져오기
-    const loggedInUser = localStorage.getItem("loggedInUser");
+    // 로그인된 사용자 정보 가져오기 (닉네임만 추출)
+    const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser")); // JSON 파싱
+    const loggedInNickname = loggedInUser ? loggedInUser.nickname : null;
 
-    if (loggedInUser) {
-        userStatusDiv.textContent = `환영합니다, ${loggedInUser}!`;
+    if (loggedInNickname) {
+        userStatusDiv.textContent = `환영합니다, ${loggedInNickname}!`;
         phoneModelSelect.disabled = false;
         postInput.disabled = false;
     } else {
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        paginatedPosts.forEach((post, index) => {
+        paginatedPosts.forEach((post) => {
             const postDiv = document.createElement("div");
             postDiv.className = "post";
 
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="post-content">
                     <strong>[${post.model}]</strong> ${post.content}
                 </div>
-                ${post.author === loggedInUser ? '<button class="delete-button">삭제</button>' : ""}
+                ${post.author === loggedInNickname ? '<button class="delete-button">삭제</button>' : ""}
             `;
 
             // 삭제 버튼 이벤트
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (postContent) {
             posts.push({
-                author: loggedInUser,
+                author: loggedInNickname, // 닉네임 사용
                 model: selectedModel,
                 content: postContent,
                 timestamp: Date.now(),
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
             postInput.value = "";
             phoneModelSelect.value = "";
             currentPage = 1; // 새 글 작성 후 첫 페이지로 이동
-            renderPosts(filterModelSelect.value);
+            renderPosts();
         }
     });
 
@@ -120,28 +120,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // 글 필터링
-    filterModelSelect.addEventListener("change", () => {
+    document.getElementById("filterModel").addEventListener("change", (e) => {
+        const filterValue = e.target.value;
         currentPage = 1; // 필터 변경 시 첫 페이지로 이동
-        renderPosts(filterModelSelect.value);
+        renderPosts(filterValue);
     });
 
     // 이전 페이지 버튼
     prevPageButton.addEventListener("click", () => {
         if (currentPage > 1) {
             currentPage--;
-            renderPosts(filterModelSelect.value);
+            renderPosts();
         }
     });
 
     // 다음 페이지 버튼
     nextPageButton.addEventListener("click", () => {
-        const filteredPosts = filterModelSelect.value === "all" ? posts : posts.filter(post => post.model === filterModelSelect.value);
-        const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-
-        if (currentPage < totalPages) {
-            currentPage++;
-            renderPosts(filterModelSelect.value);
-        }
+        currentPage++;
+        renderPosts();
     });
 
     // 초기 렌더링
