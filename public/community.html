@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티</title>
+    <link rel="stylesheet" href="community.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">스마트폰 커뮤니티</a>
+        <div id="userStatus" class="user-status"></div>
+    </header>
+    <main>
+        <section id="postSection" class="post-section">
+            <h1>커뮤니티</h1>
+            <select id="phoneModel">
+                <option value="">스마트폰 기종 선택</option>
+                <optgroup label="Galaxy S 시리즈">
+                    <option value="Galaxy S10">Galaxy S10</option>
+                    <option value="Galaxy S10+">Galaxy S10+</option>
+                    <option value="Galaxy S10 5G">Galaxy S10 5G</option>
+                    <option value="Galaxy S20">Galaxy S20</option>
+                    <option value="Galaxy S20+">Galaxy S20+</option>
+                    <option value="Galaxy S20 Ultra">Galaxy S20 Ultra</option>
+                    <option value="Galaxy S20 FE">Galaxy S20 FE</option>
+                    <option value="Galaxy S21">Galaxy S21</option>
+                    <option value="Galaxy S21+">Galaxy S21+</option>
+                    <option value="Galaxy S21 Ultra">Galaxy S21 Ultra</option>
+                    <option value="Galaxy S21 FE">Galaxy S21 FE</option>
+                    <option value="Galaxy S22">Galaxy S22</option>
+                    <option value="Galaxy S22+">Galaxy S22+</option>
+                    <option value="Galaxy S22 Ultra">Galaxy S22 Ultra</option>
+                    <option value="Galaxy S23">Galaxy S23</option>
+                    <option value="Galaxy S23 Ultra">Galaxy S23 Ultra</option>
+                    <option value="Galaxy S24">Galaxy S24</option>
+                    <option value="Galaxy S24+">Galaxy S24+</option>
+                    <option value="Galaxy S24 Ultra">Galaxy S24 Ultra</option>
+                    <option value="Galaxy S24 FE">Galaxy S24 FE</option>
+                </optgroup>
+                <optgroup label="Galaxy Z 시리즈">
+                    <option value="Galaxy Z Fold">Galaxy Z Fold</option>
+                    <option value="Galaxy Z Fold2">Galaxy Z Fold2</option>
+                    <option value="Galaxy Z Fold3">Galaxy Z Fold3</option>
+                    <option value="Galaxy Z Fold4">Galaxy Z Fold4</option>
+                    <option value="Galaxy Z Fold5">Galaxy Z Fold5</option>
+                    <option value="Galaxy Z Fold6">Galaxy Z Fold6</option>
+                    <option value="Galaxy Z Flip">Galaxy Z Flip</option>
+                    <option value="Galaxy Z Flip3">Galaxy Z Flip3</option>
+                    <option value="Galaxy Z Flip4">Galaxy Z Flip4</option>
+                    <option value="Galaxy Z Flip5">Galaxy Z Flip5</option>
+                    <option value="Galaxy Z Flip6">Galaxy Z Flip6</option>
+                </optgroup>
+                <optgroup label="Galaxy A 시리즈">
+                    <option value="Galaxy A23">Galaxy A23</option>
+                    <option value="Galaxy A33">Galaxy A33</option>
+                    <option value="Galaxy A53">Galaxy A53</option>
+                    <option value="Galaxy A24">Galaxy A24</option>
+                    <option value="Galaxy A34">Galaxy A34</option>
+                    <option value="Galaxy A54">Galaxy A54</option>
+                    <option value="Galaxy A25">Galaxy A25</option>
+                    <option value="Galaxy A35">Galaxy A35</option>
+                    <option value="Galaxy A55">Galaxy A55</option>
+                </optgroup>
+                <optgroup label="iPhone 11 시리즈">
+                    <option value="iPhone 11">iPhone 11</option>
+                    <option value="iPhone 11 Pro">iPhone 11 Pro</option>
+                    <option value="iPhone 11 Pro Max">iPhone 11 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone 12 시리즈">
+                    <option value="iPhone 12">iPhone 12</option>
+                    <option value="iPhone 12 Mini">iPhone 12 Mini</option>
+                    <option value="iPhone 12 Pro">iPhone 12 Pro</option>
+                    <option value="iPhone 12 Pro Max">iPhone 12 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone 13 시리즈">
+                    <option value="iPhone 13">iPhone 13</option>
+                    <option value="iPhone 13 Mini">iPhone 13 Mini</option>
+                    <option value="iPhone 13 Pro">iPhone 13 Pro</option>
+                    <option value="iPhone 13 Pro Max">iPhone 13 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone 14 시리즈">
+                    <option value="iPhone 14">iPhone 14</option>
+                    <option value="iPhone 14 Plus">iPhone 14 Plus</option>
+                    <option value="iPhone 14 Pro">iPhone 14 Pro</option>
+                    <option value="iPhone 14 Pro Max">iPhone 14 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone 15 시리즈">
+                    <option value="iPhone 15">iPhone 15</option>
+                    <option value="iPhone 15 Plus">iPhone 15 Plus</option>
+                    <option value="iPhone 15 Pro">iPhone 15 Pro</option>
+                    <option value="iPhone 15 Pro Max">iPhone 15 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone 16 시리즈">
+                    <option value="iPhone 16">iPhone 16</option>
+                    <option value="iPhone 16 Plus">iPhone 16 Plus</option>
+                    <option value="iPhone 16 Pro">iPhone 16 Pro</option>
+                    <option value="iPhone 16 Pro Max">iPhone 16 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone SE 시리즈">
+                    <option value="iPhone SE2">iPhone SE2</option>
+                    <option value="iPhone SE3">iPhone SE3</option>
+                </optgroup>
+            </select>
+            <textarea id="postInput" placeholder="게시글을 작성하세요..." rows="2" disabled></textarea>
+            <button id="postButton" disabled>글 작성</button>
+        </section>
+        <section id="filterSection" class="filter-section">
+            <h2>글 필터링</h2>
+            <select id="filterModel">
+                <option value="all">전체 보기</option>
+                <optgroup label="Galaxy S 시리즈">
+                    <option value="Galaxy S10">Galaxy S10</option>
+                    <option value="Galaxy S10+">Galaxy S10+</option>
+                    <option value="Galaxy S10 5G">Galaxy S10 5G</option>
+                    <option value="Galaxy S20">Galaxy S20</option>
+                    <option value="Galaxy S20+">Galaxy S20+</option>
+                    <option value="Galaxy S20 Ultra">Galaxy S20 Ultra</option>
+                    <option value="Galaxy S20 FE">Galaxy S20 FE</option>
+                    <option value="Galaxy S21">Galaxy S21</option>
+                    <option value="Galaxy S21+">Galaxy S21+</option>
+                    <option value="Galaxy S21 Ultra">Galaxy S21 Ultra</option>
+                    <option value="Galaxy S21 FE">Galaxy S21 FE</option>
+                    <option value="Galaxy S22">Galaxy S22</option>
+                    <option value="Galaxy S22+">Galaxy S22+</option>
+                    <option value="Galaxy S22 Ultra">Galaxy S22 Ultra</option>
+                    <option value="Galaxy S23">Galaxy S23</option>
+                    <option value="Galaxy S23 Ultra">Galaxy S23 Ultra</option>
+                    <option value="Galaxy S24">Galaxy S24</option>
+                    <option value="Galaxy S24+">Galaxy S24+</option>
+                    <option value="Galaxy S24 Ultra">Galaxy S24 Ultra</option>
+                    <option value="Galaxy S24 FE">Galaxy S24 FE</option>
+                </optgroup>
+                <optgroup label="Galaxy Z 시리즈">
+                    <option value="Galaxy Z Fold">Galaxy Z Fold</option>
+                    <option value="Galaxy Z Fold2">Galaxy Z Fold2</option>
+                    <option value="Galaxy Z Fold3">Galaxy Z Fold3</option>
+                    <option value="Galaxy Z Fold4">Galaxy Z Fold4</option>
+                    <option value="Galaxy Z Fold5">Galaxy Z Fold5</option>
+                    <option value="Galaxy Z Fold6">Galaxy Z Fold6</option>
+                    <option value="Galaxy Z Flip">Galaxy Z Flip</option>
+                    <option value="Galaxy Z Flip3">Galaxy Z Flip3</option>
+                    <option value="Galaxy Z Flip4">Galaxy Z Flip4</option>
+                    <option value="Galaxy Z Flip5">Galaxy Z Flip5</option>
+                    <option value="Galaxy Z Flip6">Galaxy Z Flip6</option>
+                </optgroup>
+                <optgroup label="Galaxy A 시리즈">
+                    <option value="Galaxy A23">Galaxy A23</option>
+                    <option value="Galaxy A33">Galaxy A33</option>
+                    <option value="Galaxy A53">Galaxy A53</option>
+                    <option value="Galaxy A24">Galaxy A24</option>
+                    <option value="Galaxy A34">Galaxy A34</option>
+                    <option value="Galaxy A54">Galaxy A54</option>
+                    <option value="Galaxy A25">Galaxy A25</option>
+                    <option value="Galaxy A35">Galaxy A35</option>
+                    <option value="Galaxy A55">Galaxy A55</option>
+                </optgroup>
+                <optgroup label="iPhone 11 시리즈">
+                    <option value="iPhone 11">iPhone 11</option>
+                    <option value="iPhone 11 Pro">iPhone 11 Pro</option>
+                    <option value="iPhone 11 Pro Max">iPhone 11 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone 12 시리즈">
+                    <option value="iPhone 12">iPhone 12</option>
+                    <option value="iPhone 12 Mini">iPhone 12 Mini</option>
+                    <option value="iPhone 12 Pro">iPhone 12 Pro</option>
+                    <option value="iPhone 12 Pro Max">iPhone 12 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone 13 시리즈">
+                    <option value="iPhone 13">iPhone 13</option>
+                    <option value="iPhone 13 Mini">iPhone 13 Mini</option>
+                    <option value="iPhone 13 Pro">iPhone 13 Pro</option>
+                    <option value="iPhone 13 Pro Max">iPhone 13 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone 14 시리즈">
+                    <option value="iPhone 14">iPhone 14</option>
+                    <option value="iPhone 14 Plus">iPhone 14 Plus</option>
+                    <option value="iPhone 14 Pro">iPhone 14 Pro</option>
+                    <option value="iPhone 14 Pro Max">iPhone 14 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone 15 시리즈">
+                    <option value="iPhone 15">iPhone 15</option>
+                    <option value="iPhone 15 Plus">iPhone 15 Plus</option>
+                    <option value="iPhone 15 Pro">iPhone 15 Pro</option>
+                    <option value="iPhone 15 Pro Max">iPhone 15 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone 16 시리즈">
+                    <option value="iPhone 16">iPhone 16</option>
+                    <option value="iPhone 16 Plus">iPhone 16 Plus</option>
+                    <option value="iPhone 16 Pro">iPhone 16 Pro</option>
+                    <option value="iPhone 16 Pro Max">iPhone 16 Pro Max</option>
+                </optgroup>
+                <optgroup label="iPhone SE 시리즈">
+                    <option value="iPhone SE2">iPhone SE2</option>
+                    <option value="iPhone SE3">iPhone SE3</option>
+                </optgroup>
+            </select>
+        </section>
+        <section id="postsContainer" class="posts-container">
+            <!-- 게시글이 여기에 추가됩니다 -->
+        </section>
+        <section id="pagination" class="pagination">
+            <button id="prevPage" disabled>이전</button>
+            <span id="currentPage">1</span>
+            <button id="nextPage" disabled>다음</button>
+        </section>
+    </main>
+    <footer>
+        <p>2024 스마트폰 커뮤니티</p>
+    </footer>
+    <script type="module" src="js/community.js"></script>
+</body>
+</html>

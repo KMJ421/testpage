@@ -140,3 +140,45 @@ footer {
     text-align: center;
     margin-top: auto; /* 푸터를 항상 페이지 하단으로 고정 */
 }
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+    .cart-container {
+        gap: 1.5rem; /* 아이템 간 간격 줄임 */
+    }
+
+    .cart-item {
+        padding: 1rem; /* 전체 패딩 축소 */
+        max-width: 90%; /* 모바일 화면에서 너비를 90%로 설정 */
+    }
+
+    .cart-item img {
+        width: 80px; /* 이미지 크기 축소 */
+        margin-bottom: 0.8rem; /* 이미지 하단 간격 축소 */
+    }
+
+    .cart-item h3 {
+        font-size: 1rem; /* 제목 크기 축소 */
+        margin-bottom: 0.8rem; /* 제목 하단 간격 축소 */
+    }
+
+    .cart-item .details {
+        font-size: 0.8rem; /* 상세 정보 글자 크기 축소 */
+        padding: 0.8rem; /* 패딩 줄임 */
+    }
+
+    .cart-item .details ul li {
+        margin-bottom: 0.4rem; /* 리스트 항목 간 간격 축소 */
+    }
+
+    .cart-item .buttons button {
+        padding: 0.4rem 0.8rem; /* 버튼 패딩 축소 */
+        font-size: 0.8rem; /* 버튼 글자 크기 축소 */
+    }
+
+    #compareButton {
+        padding: 0.5rem 1.5rem; /* 비교 버튼 크기 축소 */
+        font-size: 0.9rem; /* 글자 크기 축소 */
+    }
+}
+

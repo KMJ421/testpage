@@ -37,6 +37,26 @@ header {
     color: black;
 }
 
+.logout-button {
+    background-color: #c5f3ff; /* 배경색 */
+    color: black; /* 텍스트 색상 */
+    border: 1px solid black; /* 테두리 검정색 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    padding: 0.5rem 1rem; /* 버튼 내부 여백 */
+    font-size: 0.9rem; /* 글자 크기 */
+    font-weight: bold; /* 글자 굵기 */
+    cursor: pointer; /* 커서 모양 */
+    transition: background-color 0.3s, box-shadow 0.3s; /* 부드러운 효과 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 버튼 그림자 */
+    max-width: 120px; /* 버튼 최대 크기 제한 */
+    text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.logout-button:hover {
+    background-color: #c5f3ff; /* 호버 시 색상 변경 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 호버 시 그림자 증가 */
+}
+
 main {
     flex: 1; /* 남은 공간을 채우도록 설정 */
     display: flex;
@@ -81,7 +101,7 @@ button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
     color: white;
-    background-color: #0078d4;
+    background-color: #9fecff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -95,7 +115,7 @@ button:disabled {
 }
 
 button:hover:enabled {
-    background-color: #0056a3;
+    background-color: #6ce2ff;
 }
 
 .posts-container {
@@ -106,7 +126,6 @@ button:hover:enabled {
     max-width: 600px;
 }
 
-/* 게시글이 없을 때 메시지 스타일 */
 .posts-container p {
     text-align: center;
     font-size: 1.2rem;
@@ -162,7 +181,7 @@ select:disabled {
 .pagination button {
     padding: 0.5rem 1rem;
     font-size: 1rem;
-    background-color: #0078d4;
+    background-color: #9fecff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -176,7 +195,7 @@ select:disabled {
 }
 
 .pagination button:hover:enabled {
-    background-color: #0056a3;
+    background-color: #6ce2ff;
 }
 
 footer {
@@ -188,3 +207,29 @@ footer {
     margin-top: auto; /* 푸터를 항상 하단에 배치 */
     width: 100%; /* 화면 너비 전체 차지 */
 }
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* 헤더를 세로 정렬 */
+        align-items: center; /* 요소들을 중앙 정렬 */
+        text-align: center; /* 텍스트 중앙 정렬 */
+        gap: 1rem; /* 로고와 상태 표시 사이 간격 추가 */
+    }
+
+    .logo {
+        font-size: 1.5rem; /* 로고 글자 크기 조정 */
+        width: 100%; /* 로고가 전체 너비를 차지하도록 */
+    }
+
+    .user-status {
+        font-size: 1rem; /* 상태 표시 크기 유지 */
+    }
+
+    .logout-button {
+        width: 50%; /* 버튼 너비를 60%로 줄임 */
+        max-width: 100px; /* 버튼 최대 크기 제한 */
+    }
+}
+
+

@@ -116,3 +116,41 @@ footer {
     font-size: 0.9rem;
     color: black;
 }
+
+/* 모바일 반응형 스타일 */
+@media (max-width: 768px) {
+    /* 회원가입 폼 */
+    .signup-form {
+        width: 100%; /* 너비를 100%로 설정 */
+        padding: 1.5rem; /* 폼 내부 패딩 조정 */
+    }
+
+    /* 헤더 */
+    header {
+        font-size: 1.2rem; /* 헤더 폰트 크기 축소 */
+        padding: 0.8rem; /* 헤더 패딩 축소 */
+    }
+
+    /* 버튼 */
+    button {
+        padding: 0.5rem; /* 버튼 패딩 축소 */
+        font-size: 0.9rem; /* 버튼 폰트 크기 축소 */
+    }
+
+    /* 폼 그룹 */
+    .form-group input {
+        padding: 0.4rem; /* 입력 필드 패딩 축소 */
+        font-size: 0.9rem; /* 입력 필드 폰트 크기 축소 */
+    }
+
+    /* 성공 메시지 */
+    #successMessage {
+        font-size: 0.9rem; /* 메시지 폰트 크기 축소 */
+    }
+
+    /* 푸터 */
+    footer {
+        font-size: 0.8rem; /* 푸터 폰트 크기 축소 */
+        padding: 0.8rem; /* 푸터 패딩 축소 */
+    }
+}

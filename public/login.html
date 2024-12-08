@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" style="text-decoration: none; color: black;">📱 스마트폰 비교 - 로그인</a>
+    </header>
+    <main>
+        <section class="login-form">
+            <h1>로그인</h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">이메일</label>
+                    <input type="email" id="email" name="email" placeholder="이메일을 입력하세요" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">비밀번호</label>
+                    <input type="password" id="password" name="password" placeholder="비밀번호를 입력하세요" required>
+                </div>
+                <div id="messageContainer">
+                    <div id="errorMessage" class="message" style="display: none; color: red;">이메일 또는 비밀번호가 일치하지 않습니다.</div>
+                    <div id="successMessage" class="message" style="display: none; color: green;">로그인 성공! 환영합니다!</div>
+                </div>
+                <button type="submit">로그인</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>2024 스마트폰 비교 사이트</p>
+    </footer>
+    <script type="module" src="js/login.js"></script>
+</body>
+</html>
